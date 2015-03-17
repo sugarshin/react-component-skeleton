@@ -1,0 +1,20 @@
+{
+  "name": "react-component-skeleton",
+  "version": "0.0.1",
+  "description": "React component skeleton",
+  "repository": "git@github.com:sugarshin/react-component-skeleton.git",
+  "main": "index.js",
+  "files": [
+    "lib",
+    "README.md",
+    "index.js",
+    "package.json",
+    "test"
+  ],
+  "scripts": {
+    "start": "beefy demo.jsx --live --open -- -t babelify --extension='.jsx'",
+    "build": "babel src/react-component-skeleton.jsx -o lib/react-component-skeleton.js"
+  },
+  "author": "sugarshin",
+  "license": "MIT"
+}
