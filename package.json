@@ -12,8 +12,12 @@
     "test"
   ],
   "scripts": {
-    "start": "beefy demo.jsx --live --open -- -t babelify --extension='.jsx'",
-    "build": "babel src/react-component-skeleton.jsx -o lib/react-component-skeleton.js"
+    "start": "babel src/react-component-skeleton.jsx -w -o lib/react-component-skeleton.js",
+    "demo": "beefy demo.jsx --live --open -- -t babelify -t cssify --extension='.jsx'",
+    "compile": "babel src/react-component-skeleton.jsx -o lib/react-component-skeleton.js",
+    "build-standalone": "browserify src/react-component-skeleton.jsx -t babelify -s ComponentName | derequire > build/react-component-skeleton.js",
+    "build-min": "uglifyjs build/react-component-skeleton.js -m -c warnings=false --comments '/\\/*!/' -o build/react-component-skeleton.min.js",
+    "build": "npm run compile && npm run build-standalone && npm run build-min"
   },
   "author": "sugarshin",
   "license": "MIT"
