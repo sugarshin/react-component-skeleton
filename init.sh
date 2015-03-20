@@ -1,6 +1,6 @@
 #!/usr/bin/sh
 
-npm i -D babel babelify beefy browserify
-npm i -S brfs defaultcss react
+npm i -D babel babelify beefy browserify cssify
+npm i -S react
 mkdir lib
 rm -rf .git init.sh

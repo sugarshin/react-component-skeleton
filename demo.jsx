@@ -1,3 +1,3 @@
 "use strict";
 
-let ComponentName = require('./');
+import ComponentName from './';
