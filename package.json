@@ -2,7 +2,10 @@
   "name": "react-component-skeleton",
   "version": "0.0.1",
   "description": "React component skeleton",
-  "repository": "git@github.com:sugarshin/react-component-skeleton.git",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:sugarshin/react-component-skeleton.git"
+  },
   "main": "index.js",
   "files": [
     "lib",
@@ -12,12 +15,11 @@
     "test"
   ],
   "scripts": {
-    "start": "babel src/react-component-skeleton.jsx -w -o lib/react-component-skeleton.js",
+    "start": "npm run watch-babel & npm run watch-stylus",
+    "watch-babel": "babel src -w -d lib",
+    "watch-stylus": "stylus src -I node_modules/nib/lib -w -o lib",
     "demo": "beefy demo.jsx --live --open -- -t babelify -t cssify --extension='.jsx'",
-    "compile": "babel src/react-component-skeleton.jsx -o lib/react-component-skeleton.js",
-    "build-standalone": "browserify src/react-component-skeleton.jsx -t babelify -s ComponentName | derequire > build/react-component-skeleton.js",
-    "build-min": "uglifyjs build/react-component-skeleton.js -m -c warnings=false --comments '/\\/*!/' -o build/react-component-skeleton.min.js",
-    "build": "npm run compile && npm run build-standalone && npm run build-min"
+    "build": "stylus src -I node_modules/nib/lib -o lib && babel src -d lib"
   },
   "author": "sugarshin",
   "license": "MIT"

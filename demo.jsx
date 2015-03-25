@@ -1,4 +1,5 @@
 "use strict";
 
-import from './react-component-skeleton.css'
+import from './lib/react-component-skeleton.css'
+import React from 'react';
 import ComponentName from './';
