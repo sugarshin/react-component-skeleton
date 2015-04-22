@@ -18,7 +18,7 @@
     "start": "npm run watch-babel & npm run watch-stylus",
     "watch-babel": "babel src -w -d lib",
     "watch-stylus": "stylus src -I node_modules/nib/lib -w -o lib",
-    "demo": "beefy demo.jsx --live --open -- -t babelify -t cssify --extension='.jsx'",
+    "demo": "budo demo.jsx:demo.js --live -v -- -t [ babelify cssify --exetensions .jsx ] | garnish",
     "build": "stylus src -I node_modules/nib/lib -o lib && babel src -d lib"
   },
   "author": "sugarshin",

@@ -1,7 +1,6 @@
 #!/usr/bin/sh
 
-npm i -D babel babelify beefy browserify cssify nib react stylus
+npm i -D babel babelify browserify budo cssify garnish nib react stylus
 mkdir lib
 echo '@charset "utf-8"\n\nbody\n  background indianred\n' > src/react-component-skeleton.styl
-npm run compile
 rm -rf .git init.sh
